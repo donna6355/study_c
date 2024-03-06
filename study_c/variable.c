@@ -25,17 +25,26 @@ int main()
 	printf("%d is what you typed\n", num);
 
 	int one, two, three;
-	printf("정수 3개를 입력하세요: ");
+	printf("please input 3 integer: ");
 	scanf_s("%d %d %d", &one, &two, &three);
-	printf("첫번째 값 : %d", one);
-	printf("두번째 값 : %d", two);
-	printf("세번째 값 : %d", three);
+	printf("first int : %d\n", one);
+	printf("second int : %d\n", two);
+	printf("third int : %d\n", three);
 
 	char c = 'A';
-	printf("%C\n", c);
+	printf("%c\n", c);
 
 	char str[256];
+	printf("please input text: ");
 	scanf_s("%s", str, sizeof(str));
-	printf("%s\n");
+	printf("%s\n",str);
 	return 0;
+
+	/*
+	int %d
+	float %.nf
+	double %.nlf
+	char %c for single character
+		 %s for string
+	*/
 }
