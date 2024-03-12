@@ -44,5 +44,15 @@ int main()
   printf("%s\n", c_array);
   printf("ASCII code : %d\n", c_array[0]);
 
+  int score[5] = {76, 84, 80, 92, 96};
+  int totalScore = 0;
+  for (int i = 0; i < 5; i++)
+  {
+    totalScore += score[i];
+  }
+
+  printf("total comes %d\n", totalScore);
+  printf("average comes %0.1f\n", totalScore/5.0f);
+
   return 0;
 }
