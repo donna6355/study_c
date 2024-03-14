@@ -10,6 +10,14 @@ struct Sample // declare struct in global and pascal case is recommended
   struct Sample *friend;
 };
 
+struct Train
+{
+  int no;
+  struct Train *next; // self reference has to be pointer!! otherwise it will go infinite recursive....
+  //   Recursive structures
+  // (aka self-referential structures)
+};
+
 int main()
 {
   struct Sample one;
@@ -48,10 +56,20 @@ int main()
   printf("year : %d\n", onePointer->year); // indirect access to struct with -> operator
   printf("price : %d\n", (*onePointer).price);
   printf("company : %s\n", (*onePointer).company);
+
   printf("== FRIEND information from struct ONE ==\n");
   printf("name : %s\n", one.friend->name);
   printf("year : %d\n", one.friend->year);
   printf("price : %d\n", one.friend->price);
   printf("company : %s\n", one.friend->company);
+
+  struct Train tOne = {1};
+  struct Train tTwo = {2};
+  struct Train tThree = {3};
+  tOne.next = &tTwo;
+  tTwo.next = &tThree;
+  struct Train *currentTrain = &tOne;
+  printf("current train no is %d\n", currentTrain->next->next->no);
+
   return 0;
 }
