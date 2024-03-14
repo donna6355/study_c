@@ -9,6 +9,24 @@ struct Sample // declare struct in global and pascal case is recommended
   char *company;
   struct Sample *friend;
 };
+typedef struct SampleTwo
+{
+  char *name;
+  int year;
+  int price;
+  char *company;
+  struct SampleTwo *friend;
+} CAT;
+
+// usually omit struct name and just use typedef!
+typedef struct
+{
+  char *name;
+  int year;
+  int price;
+  char *company;
+  struct SampleTwo *friend;
+} KITTY;
 
 struct Train
 {
@@ -20,8 +38,10 @@ struct Train
 
 int main()
 {
+  typedef struct Sample Cat;
   struct Sample one;
-  struct Sample two = {"Kkomi", 2021, 100000, "SJ", &one};
+  Cat two = {"Kkomi", 2021, 100000, "SJ", &one};
+  KITTY three = {"moomin", 2016, 1000000, "Fiona", &one};
   /*
   this is not allowed!!
   struct Sample two;
