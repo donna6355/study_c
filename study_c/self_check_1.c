@@ -28,5 +28,16 @@ int main()
   printf("DOB : %s\n", userDob);
   printf("SHOESIZE : %d\n", shoeSize);
 
+  /*
+  FORMAT SPECIFIER
+  %d : int
+  %f : float
+  %.nf : float with n+1 round
+  %lf : double
+  %nlf : double with n+1 round
+  %c : char
+  %s : string
+  */
+
   return 0;
 }
