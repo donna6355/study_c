@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main()
 {
@@ -23,7 +25,7 @@ int main()
   printf("floor of 4.42 is %.2lf\n", floor(4.42));
   printf("absolute value of -4.42 is %.2lf\n", fabs(-4.42));
 
-  // string.h function
+  // string.h functions
   char str[50];
   char greet[100] = "WELCOME ";
   int len;
@@ -34,6 +36,28 @@ int main()
 
   len = strlen(str);
   printf("Length of |%s| is |%d|\n", str, len);
+
+  // stdlib.h functions
+  char *sample;
+
+  /* Initial memory allocation */
+  sample = (char *)malloc(17);
+  strcpy(sample, "Gorgeous Isaac");
+  printf("String = %s,  Address = %p\n", sample, sample);
+
+  /* Reallocating memory */
+  sample = (char *)realloc(sample, 27);
+  strcat(sample, " :) XD :0 :D");
+  printf("String = %s,  Address = %p\n", sample, sample);
+
+  free(sample);
+
+  // time. functinos
+  time_t curtime;
+
+  time(&curtime);
+
+  printf("Current time = %s", ctime(&curtime));
 
   return 0;
 }
