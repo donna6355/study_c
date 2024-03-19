@@ -1,4 +1,8 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
+#include <math.h>
+#include <string.h>
 
 int main()
 {
@@ -12,6 +16,24 @@ int main()
     }
     printf("\n");
   }
+
+  // math.h functions
+  printf("square root of 4 is %.2lf\n", sqrt(4));
+  printf("ceil of 4.42 is %.2lf\n", ceil(4.42));
+  printf("floor of 4.42 is %.2lf\n", floor(4.42));
+  printf("absolute value of -4.42 is %.2lf\n", fabs(-4.42));
+
+  // string.h function
+  char str[50];
+  char greet[100] = "WELCOME ";
+  int len;
+
+  strcpy(str, "Good morning Isaac:)"); // copy string into var
+  strcat(greet, str);                  // append string to first arg
+  printf("this is what after strcat : %s\n", greet);
+
+  len = strlen(str);
+  printf("Length of |%s| is |%d|\n", str, len);
 
   return 0;
 }
