@@ -51,6 +51,8 @@ int main()
   printf("String = %s,  Address = %p\n", sample, sample);
 
   free(sample);
+  printf("after free memory String = %s,  Address = %p\n", sample, sample);
+  // after free memory, address remains but no string value
 
   // time. functinos
   time_t curtime;
