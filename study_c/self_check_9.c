@@ -35,6 +35,6 @@ int main()
     correct = strcmp(kor, answer);
     printf("%s is %s answer!\n", answer, correct == 0 ? "correct" : "INCORRECT");
   }
-
+  fclose(textFile);
   return 0;
 }
